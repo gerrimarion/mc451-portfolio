@@ -1,0 +1,42 @@
+---
+title: "Discussion & Conclusion"
+---
+
+This study examined the cozy game genre through YouTube gameplay videos of a player's first experiences. Using quantitative content analysis of N = 100 items collected from YouTube between 04/01/2026-04/05/202, the study first identified emergent themes through qualitative immersion (Study 1), then applied the resulting coding scheme systematically and tested for relationships among variables (Study 2). The findings are discussed below in relation to each research question and the broader theoretical framework.
+
+## Addressing the Research Questions
+
+**RQ1** asked "How would YouTube gameplay videos frame how different genders play cozy games?" The qualitative analysis in Study 1 revealed that those who present as feminine were the highest part of the dataset with those who identify as masculine were slightly under, and the lowest being the "other" identifier. This included people who did not have a preferred gender identity and/or used they/them pronouns. The frequency distribution presented in Study 2 (Table 2, Figure 1) confirmed that there was a fair concentration of gender performance for those who did perform their gender and those who were indifferent to gender performance and identity. This suggests that while those did have a preferred gender identity, that doesn't mean they "successfully" performed their gender. They were split between "did perform" and "indifferent," meaning that despite their gender identity, they could've also leaned more towards indifferent and playing the cozy game as it is.
+
+This challenges Gender Performativity Theory overall. Cozy games and their creation are supposed to be relaxing and something for an individual to enjoy without feeling like they have to act or be a specific way. By allowing the space to act as much as yourself as you can, there's no inherent need to perform your gender.
+
+**RQ2** asked "What is the relationship between gender performance and how the interact with their first "100 Days in Stardew Valley or Fields of Mistria" YouTube gameplay videos?" The Chi-Square test reported in Study 2 did not reveal a statistically significant relationship between gender performance and gaming mechanics.
+
+The absence of a significant relationship suggests that gender performance does not vary systematically with gaming mechanics in this dataset. This null result is itself informative: it implies that there is no relationship between the performance of gender and the gaming mechanics involved in a cozy game. Anything that does happen is merely coincidental.
+
+## Connecting the Two Studies
+
+The two-part design of this study allowed the qualitative and quantitative phases to complement each other. Study 1's immersion process ensured that the variables tested in Study 2 were grounded in the actual patterns of the data, rather than being imposed from a textbook or prior study. The qualitative findings held up during immersion, as well as when it came to the Chi-Square test overall. Individuals that were playing either *Stardew Valley* or *Fields of Mistria* were playing for the sake of pure enjoyment. They're meant to be inclusive and freeing, so during immersion, those who were indifferent acted out of enjoyment for the game and not by gender performance. If gender was performed, it was through verbal interactions, but they were a miniscule part in the overall idea.
+
+## Theoretical Implications
+
+Taken together, these findings complicate the predictions of Gender Performativity Theory. Gender Performativity Theory would predict that repeated actions involving a person's performance of their gender would continue through a game predominantly for women, and the present results did not align with this prediction. This means that gender performance is not present when it comes to the cozy game genre. Since the genre is intended for relaxed and simpler gameplay and story, the players as individuals can relax and enjoy themselves at a slower pace.
+
+## Limitations
+
+Several limitations of the present study should be noted. First, the sample size was through only YouTube gameplay videos and not through indiviual interactions of the players. Further studies could involve an additional survey or sitting through livestreams instead of their VODs. Second, all coding was handled by an indivudal coder. Further studies should employ at least two-to-three as others can have different perspectives on what exactly counts as gender identity, then report Cohen's Kappa or Krippendorff's Alpha. Third, the study period of 04/01/2026-04/05/2026 limited how long a video could be observed for. As this is an assignment for a class, it did not allow the overall viewing of gameplay videos and had to be selected for the sake of time. Future studies should allow more time in order to properly analyze gender, Gender Performativity Theory, and the gaming mechanics.
+
+These limitations notwithstanding, the study's systematic sampling procedure, inductively developed codebook, and use of both qualitative and quantitative methods represent meaningful methodological strengths.
+
+## Conclusion
+
+The central finding of this study is that there is not a connection between gender performance and gaming mechanics when it comes to the cozy game genre. This matters because the genre is intended to be a freeing and relaxing experience, which means that the pressures of performing gender would be set aside as well. Future research might extend this work by Future research might extend this work by studying for a longer time to view all YouTube videos in their entirety, additional outlets besides YouTube gameplay videos, and Uses and Gratifications Theory by Blumler and Katz (1974) instead of Gender Performativity Theory.
+
+
+---
+
+::: {.callout-note}
+## A Note on This Project
+
+This study was conducted as a course project in MC 451: Research Methods in Mass Media at Southern Illinois University Edwardsville (Spring 2026), under the supervision of Dr. Alex P. Leith. The data, codebook, and analysis files are available in the GitHub repository linked at the top of this page.
+:::

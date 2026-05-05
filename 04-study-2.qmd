@@ -1,0 +1,246 @@
+---
+title: "Study 2: Quantitative Content Analysis"
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+final <- readRDS("final_project_clean.RDS")
+```
+
+Using the variables developed through the qualitative analysis in Study 1, the full sample (N = `r nrow(final)` items) was coded systematically. This chapter presents the quantitative results: descriptive statistics characterizing the sample, followed by an inferential test addressing the study's research questions.
+
+---
+
+## Descriptive Statistics
+
+### Overview of the Sample
+
+```{r}
+#| label: tbl-sample-overview
+#| tbl-cap: "Table 1. Sample composition by Gender Performance."
+
+final |>
+  count(gender_performance, name = "n") |>                    
+  mutate(
+    Percent = round(n / sum(n) * 100, 1),
+    Percent = paste0(Percent, "%")
+  ) |>
+  rename(
+    "Source / Outlet" = gender_performance,                   
+    "N" = n,
+    "% of Sample" = Percent
+  ) |>
+  kable(align = c("l", "c", "c")) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = knitr::is_html_output(),
+    latex_options = c("hold_position"),
+    font_size = 13
+  ) |>
+  row_spec(0, bold = TRUE, background = "#b71c1c", color = "white")
+```
+
+The data came from YouTube gameplay videos, watching them the whole way through, then deciding whether or not the different genders showed gender performance. It was distributed through the span of five days with fairly consistent video upload times. 
+
+---
+
+### Distribution of Primary Variable: Gender Performance
+
+```{r}
+#| label: tbl-var1-freq
+#| tbl-cap: "Table 2. Frequency distribution of Gender Performance (N = 100)."
+
+final |>
+  filter(gender_performance != "Unable to Determine") |>        
+  count(gender_performance, name = "n") |>                      
+  arrange(desc(n)) |>
+  mutate(
+    Percent = round(n / sum(n) * 100, 1),
+    `Cumulative %` = round(cumsum(Percent), 1),
+    Percent = paste0(Percent, "%"),
+    `Cumulative %` = paste0(`Cumulative %`, "%")
+  ) |>
+  rename(
+    "Gender Performance" = gender_performance,                   
+    "N" = n
+  ) |>
+  kable(align = c("l", "c", "c", "c")) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = knitr::is_html_output(),
+    latex_options = c("hold_position"),
+    font_size = 13
+  ) |>
+  row_spec(0, bold = TRUE, background = "#b71c1c", color = "white")
+```
+
+The most common when it came to gender performance is that half of my dataset did perform their gender, with signs of indifference being the second most common. The least common is those who did not perform by their gender. This connects to Study 1 when it came to the verbal responses and how that coincided with gender performance.
+
+---
+
+### Visualization: Gender Performance
+
+```{r}
+#| label: fig-var1-bar
+#| fig-cap: "Figure 1. Distribution of Gender Performance across all coded items. The key visual pattern is those who did perform their gender and those who either did not or showed indifference to gender identity"
+#| fig-width: 7
+#| fig-height: 4.5
+
+final |>
+  filter(gender_performance != "Unable to Determine") |>        
+  count(gender_performance) |>                                  
+  mutate(
+    pct = n / sum(n),
+    gender_performance = fct_reorder(gender_performance, n, .desc = TRUE)     
+  ) |>
+  ggplot(aes(x = gender_performance, y = pct, fill = gender_performance)) +  
+  geom_col(width = 0.65, show.legend = FALSE) +
+  geom_text(
+    aes(label = paste0(round(pct * 100, 1), "%")),
+    vjust = -0.4,
+    size = 3.5,
+    color = "#333333"
+  ) +
+  scale_y_continuous(
+    labels = scales::percent_format(accuracy = 1),
+    limits = c(0, 1),
+    expand = expansion(mult = c(0, 0.08))
+  ) +
+  scale_fill_manual(values = c(
+    "#b71c1c", "#e57373", "#ef9a9a", "#ffcdd2", "#880e4f"
+  )) +
+  labs(
+    title = "Distribution of Gender Performance",
+    subtitle = "Source: YouTube, 04/01/2026-04/05/2026 | N = 100",
+    x = "Gender Performance",
+    y = "Proportion of Items"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", color = "#b71c1c"),
+    plot.subtitle = element_text(color = "#666666", size = 9),
+    axis.title = element_text(color = "#333333"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+```
+
+The dominant category are those who did perform by their gender. The distribution is fairly concentrated in one category and spread out in the others. The most surprising is how little those did not perform by their gender and were indifferent overall. They were more focused on enjoying the game without gender constraints even though they had a gender identity.
+
+---
+
+### Distribution of Secondary Variable: Gaming Mechanics
+
+```{r}
+#| label: tbl-var2-freq
+#| tbl-cap: "Table 3. Frequency distribution of Gaming Mechanics."
+
+final |>
+  filter(gaming_mechanics != "Unable to Determine") |>        
+  count(gaming_mechanics, name = "n") |>                      
+  arrange(desc(n)) |>
+  mutate(
+    Percent = round(n / sum(n) * 100, 1),
+    Percent = paste0(Percent, "%")
+  ) |>
+  rename(
+    "Gaming Mechanics" = gaming_mechanics,                   
+    "N" = n
+  ) |>
+  kable(align = c("l", "c", "c")) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = knitr::is_html_output(),
+    latex_options = c("hold_position"),
+    font_size = 13
+  ) |>
+  row_spec(0, bold = TRUE, background = "#b71c1c", color = "white")
+```
+
+The top gaming mechanic is the community gaming mechanic with land following behind it. Fishing and romance were the lowest ones, to my surprise. While there were interests in romance, it did end up being a part of community or did not make it far enough video-wise to have an official romantic interest. Community  and land being in the top make sense because both games prioritize those mechanics the most; interacting with NPC's and working around your farm land or interacting with the entire map. 
+
+---
+
+## Inferential Analysis
+
+### Chi-Square Test of Independence: Gender Performance × Gaming Mechanic
+
+```{r}
+#| label: tbl-crosstab
+#| tbl-cap: "Table 4. Cross-tabulation of Gender Performance by Gaming Mechanic."
+
+chi_data <- final |>
+  filter(
+    gender_performance != "Unable to Determine",               
+    gaming_mechanics != "Unable to Determine"                
+  )
+
+cross_tab <- table(chi_data$gender_performance, chi_data$gaming_mechanics)  
+
+cross_tab |>
+  as.data.frame.matrix() |>
+  rownames_to_column(var = "Gender Performance") |>  
+  kable(align = "lcccc") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = knitr::is_html_output(),
+    latex_options = c("hold_position"),
+    font_size = 13
+  ) |>
+  add_header_above(
+    c(" " = 1, "Gaming Mechanic" = ncol(cross_tab))  
+  ) |>
+  row_spec(0, bold = TRUE, background = "#b71c1c", color = "white")
+```
+
+The most common cell combination were those who did perform their gender and interacted with the land, including decorating the farm and general farm activities (animal care, crops, rearranging, etc.). Surprisingly, the community tab was the most spread out across gender performances, though it was the highest with those who were indifferent to gender performance. These players were enjoying the game in every aspect they could, but overall gender performance favored the community aspect the most. 
+
+```{r}
+#| label: chi-square-test
+#| include: false
+
+chi_result <- chisq.test(cross_tab)
+
+chi_x2  <- round(chi_result$statistic, 2)
+chi_df  <- chi_result$parameter
+chi_p   <- round(chi_result$p.value, 3)
+chi_sig <- ifelse(chi_result$p.value < .05)
+min_expected <- round(min(chi_result$expected), 2)
+```
+
+**Chi-Square Result:**
+
+A Chi-Square test of independence was conducted to examine the relationship between Gender and Gaming Mechanic. The result was `NA`, χ²(`13.421`) = `12`, *p* = `0.3392`. It is not statistically significant. 
+*Note: I had to use the `chisq.test(final$, final$gaming_mechanics)` to find values.*
+
+A Chi-Square test of independence was conducted to examine the relationship between Gender and Gaming Mechanic. The result was `NA`, χ²(`10`) = `NaN`, *p* = `0.NaN`. It is not statistically significant. 
+
+The chi_result$expected ran this:
+                   land mining community romance fishing undetermined
+  did perform     19.80   6.60      22.0       0    1.10          5.5
+  did not perform  2.16   0.72       2.4       0    0.12          0.6
+  indifferent     12.96   4.32      14.4       0    0.72          3.6
+  undetermined     1.08   0.36       1.2       0    0.06          0.3
+
+
+---
+
+## Summary of Findings
+
+- Community was the most preferred gaming mechanic, along with land closely behind.
+- There was an even split between those who did perform their gender and those who were indifferent.
+- There was no statistical significange between the two variables overall.
+
+::: {.callout-note}
+## Key Findings at a Glance
+
+- **RQ1** Gameplay Videos and Gender: YouTube Gameplay videos frames gender as indifferent to gender performance, despite their performance of gender or gender identity.
+
+- **RQ2** Gender Performance and Gaming Mechanic Interactions: The community gaming mechanic was spread out amongst all gender performance categories, making the comparison not statistically significant with p = 0.3392.
+:::

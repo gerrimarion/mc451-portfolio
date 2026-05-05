@@ -1,0 +1,1200 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Arial}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\KOMAoption{captions}{tablesignature}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Study Title: A Content Analysis of Cozy Games and Gender Performance},
+  pdfauthor={Gerri Marion},
+  colorlinks=true,
+  linkcolor={darkred},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Study Title: A Content Analysis of Cozy Games and Gender
+Performance}
+\author{Gerri Marion}
+\date{2026-05-01}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter{Abstract}\label{abstract}
+
+\textbf{Author:} Gerri Marion \textbf{Instructor:} Dr.~Alex P. Leith
+\textbf{Institution:} Southern Illinois University Edwardsville
+\textbf{Date:} May 2026
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Abstract}
+
+\emph{This study examines how YouTube gameplay videos covered the cozy
+game genre during 04/01/2026-04/05/2026. Using a two-part content
+analysis (N = 100), this study first employed qualitative analysis to
+identify emergent themes in the coverage, then tested relationships
+among coded variables using the Chi-Square test. Findings indicate that
+there was no statistical significange between gender and gaming
+mechanics, nor through the qualitative's results of gender performance
+and gaming mechanics. These results suggest that cozy games are a
+relaxing experience that allows a release of the pressures of gender
+performance, encouring the inclusive space for everyone. It suggests
+that because of the lack of pressures and complications of cozy games,
+there is not much of a reason to perform by their gender identity.}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{About This Study}\label{about-this-study}
+
+This project presents original content analysis research conducted in
+partial fulfillment of MC 451: Research Methods in Mass Media at SIUE. I
+looked into the cozy game genre and how gender performance is impacted
+through a genre marketed towards women. This study was conducted using
+YouTube gameplay videos of \emph{Stardew Valley} and \emph{Fields of
+Mistria}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{How to Navigate This
+Report}\label{how-to-navigate-this-report}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Section
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What You Will Find
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\href{01-literature-review.qmd}{Literature Review} & Background, theory,
+and research questions \\
+\href{02-methodology.qmd}{Methodology} & Data source, sampling,
+codebook, and procedures \\
+\href{03-study-1.qmd}{Study 1: Qualitative Analysis} & Emergent themes,
+patterns, and variable development \\
+\href{04-study-2.qmd}{Study 2: Quantitative Analysis} & Descriptive
+statistics, visualization, and inferential testing \\
+\href{05-discussion.qmd}{Discussion} & Interpretation, limitations, and
+conclusion \\
+\href{references.qmd}{References} & Full bibliography \\
+\end{longtable}
+}
+
+\bookmarksetup{startatroot}
+
+\chapter{Literature Review}\label{literature-review}
+
+The cozy game genre has been around for decades, targeting their cute
+aesthetics and ``simpler'' game play to women and minority communities.
+It gives them the space to truly express themselves and be relieved of
+the pressure and harassment from online gaming communities, specifically
+from men. However, there is very little studying how Butler's (1988)
+Gender Performativity Theory plays into a genre known for it's soft and
+simple game play. This study looks to see if gender is still performed
+when new players turn to the cozy game genre, addressing it through a
+qualitative and quantitative content analysis.
+
+\section{Background and Significance}\label{background-and-significance}
+
+Cozy games have been known in the video game community for years, with
+games such as Electronic Arts \emph{The Sims} series and Amccus
+\emph{Harvest Moon}, now known as \emph{Story of Seasons}. The biggest
+reason why this genre had a rapid incline is how women and minorities
+were and still are being treated in online gaming communities. The most
+notable of specifically women being targed in online gaming spaces, the
+majority being by men, is the GamerGate scandal in 2014. According to
+Cote (2020), GamerGate started as ``{[}s{]}purred by (unfounded)
+accusations that game designer Zoe Quinn had exchanged sexual favors for
+positive coverage of her game \emph{Depression Quest}, the online
+Twitter campaign supposedly advocated for better ethics in game
+journalism. In practice, it directed a slew of harassment at female game
+developers, game studies scholars, journalists, players, and allies.''
+These women were harassed, received death threats, doxxed, and so on.
+Later, a study was conducted by Tang \& Fox (2016) looking at how men
+interact with women and minorities in online gaming spaces. They found
+that ``certain personality favors and contextual factors predict men's
+harassment behavior in online video games.'' These included topics such
+as intense sexual and general harassment towards those individuals.
+
+With recurring themes of harassment and harmful targeting towards women
+and other minorities, the cozy game genre rose in popularity with these
+target demographics. The COVID-19 pandemic was the final push for cozy
+games to gain momentum as ``a surge of women joining the hobby and
+vocalized support for games that do not align with what has been deemed
+as mainstream.'' Brtis (2022)
+
+While there are plenty of studies that look into why the cozy game genre
+exists and why it's so popular, there's very little that looks into how
+gender is performed when these kinds of games are played. A study
+conducted by {``Beyond the {`Core-Gamer'}''} (2015) focused on the
+gender preferences of different gaming genres and found that men heavily
+leaned towards action and shooter style of games, or what's known as
+``core-gamer'' kind of games, while older people and women preferred
+puzzle and card games. Fang (2025) studied gender performance, but it
+wasn't through the cozy game genre. They used \emph{Honor of Kings}
+(TiMi Studio Group, 2015), a popular online game in China that's mostly
+known for being ``a male-dominated virtual space'' and wanted to see how
+different genders performed in that area. They found themes of
+gender-switching, ``gendered strategies,'' and different forms of gender
+performance depending on the gender they chose for their character.
+``Women employ `gender-neutral' self representation, competitive
+character choices, skill-focused gaming to demonstrate the agency and
+power inherent to gender performativity'' while men can simply play the
+game as themselves, ``enjoy the novelty of role-reversal, experiencing
+the game from the female perspective.'' Fang (2025) Even though Fang
+found some themes of gender performance, it was in an online game known
+for players who identify as men. There isn't much that addresses gender
+performance from a genre that encase players who identify as women or
+other gender identities and backgrounds. The goal for this study,
+especially after Fang's findings, was to turn the tables and see if
+different genders preferred specific mechanics and how they acted out
+their genders through a game viewed as cozy.
+
+One thing to note is that \emph{Honor of Kings} could be considered as a
+cozy game for those who aren't men and play it as there is no official
+agreement between players, game designers, journalists, etc., that can
+properly define what counts as a cozy game; it's subjective based on the
+person and their experiences. Boudreau et al. (2025) However, for the
+sake of this study and being stated in Fang's (2025) article that
+\emph{Honor of Kings} is mostly for masculine players, cozy games will
+be focused more on the targeted demographic of women and minorities.
+
+The chosen media for this study was looking at YouTube gameplay videos
+about a player's first experiences in cozy games. Concerned Ape's 2016
+title \emph{Stardew Valley} not only is the game people in the community
+find as the top cozy game, but ``imagines sexual and cultural
+progressiveness as a long-term part of traditional and rural society.''
+Mackay \& Roberts (2025) The other game chosen was NPC Studio's
+\emph{Fields of Mistria} (2024), a game with very similar mechanics in a
+90's anime style, also inspired by games like \emph{Stardew Valley}.
+
+Both of these games are very similar in mechanics, romance options,
+inclusivity and theme, making them the ideals for what cozy games are
+usually thought of. By looking at YouTube gameplay videos of first
+experiences with these kinds of games, we'll be able to see if their
+gender is performed throughout the video and how. This looks at what
+gaming mechanics a player leans towards, how they interact and verbally
+respond to livestream chats and characters, if they spend time a lot of
+time in character creation and farm decoration, and how their gender is
+performed, if at all.
+
+\section{Theoretical Framework}\label{theoretical-framework}
+
+This study is grounded in Butler (1988) Gender Performativity Theory.
+The key idea is that gender is a performance, repeated by the society
+and culture that individual is raised in. If their performance is done
+correctly or incorrectly, they are praised or punished by those who
+``accurately'' perform their gender identity. According to Butler, the
+repeated actions of that performance ``is a reenactment and
+reexperiencing of a set of meanings already socially established; it is
+the mundane and ritualized form of of their legitimation.'' (p.~526)
+
+Applied to the present study, Gender Performativity Theory would
+continue through a genre that already has a predominantly feminine
+demographic. This study predicts that women and minorities will be more
+relaxed and willing to embrace their femininity through creativity, such
+as the amount of time spent creating a character and farm
+exterior-interior decorating, while men will lean more towards hands-on
+gaming mechanics, such as mining and combat and fishing, and spend less
+time on their farm. They will perform their genders based on repeated
+actions praised in their personal lives, and possibly through audience
+interaction if the video is a part of a livestream.
+
+The article examined in the Annotated Manuscript --- Boudreau et al.
+(2025) --- provides a semi-direct application of this framework. While
+Boudreau focuses on Social Construction Theory when it came to her dive
+into cozy games and what they are, the idea of gender performance is
+socially constructed. Butler confirms this through the \emph{repeated}
+actions of a person, something that would exist within the construction
+of that society. With cozy games being predominantly women and
+minorities, it allows and encourages that idea of gender performance
+through what makes the person feel ``cozy,'' though again, the idea of
+``cozy'' is based on personal experiences.
+
+\section{Research Questions}\label{research-questions}
+
+Based on the gaps in the existing literature and the logic of Gender
+Performativity Theory, this study addresses the following research
+questions:
+
+\begin{quote}
+\textbf{RQ1:} How would YouTube gameplay videos frame how different
+genders play cozy games?
+\end{quote}
+
+\begin{quote}
+\textbf{RQ2:} What is the relationship between gender performance and
+how the interact with their first ``100 Days in \emph{Stardew Valley} or
+\emph{Fields of Mistria}'' YouTube gameplay videos?
+\end{quote}
+
+Together, these questions aim to produce a systematic, empirically
+grounded account of how YouTube gameplay videos covers the cozy game
+genre --- one that moves beyond anecdotal observation toward replicable
+measurement.
+
+\bookmarksetup{startatroot}
+
+\chapter{Methodology}\label{methodology}
+
+This study employed a two-part content analysis to address the research
+questions introduced in the previous section. Study 1 used qualitative
+methods --- immersion, memo writing, and thematic analysis --- to
+identify emergent patterns in the source material and develop the coding
+variables used in Study 2. Study 2 applied those variables
+systematically through quantitative content analysis, producing
+descriptive statistics and inferential tests. Content analysis is
+appropriate here because it provides a replicable, transparent method
+for identifying patterns in media content at a scale not feasible
+through close reading alone (\textbf{Neuendorf2017?};
+\textbf{Krippendorff2018?}).
+
+\section{Data Source}\label{data-source}
+
+Data was collected from YouTube gameplay videos of a player's first
+experience in \emph{Stardew Valley} and \emph{Fields of Mistria}. This
+source was selected because my main focus of this study is how gender
+and gender performance plays into the cozy game genre, if at all. The
+genre itself was created during and after COVID as a response to toxic
+masculinity in online gaming communities. By choosing these two games,
+it allowed the ability to see how new players interact with the cozy
+game genre as well as being able to see if some of those gender
+performances would reveal during gameplay. The YouTube gameplay videos
+of both \emph{Stardew Valley} and \emph{Fields of Mistria} ``first
+times'' provides access to typical gaming mechanics in cozy games, the
+possibility of gender being performed through them, and being recent
+enough to have accessible data, making it well suited to the systematic
+sampling procedure described below.
+
+\section{Sample and Sampling
+Procedure}\label{sample-and-sampling-procedure}
+
+Items were identified using the search string
+\texttt{("stardew\ valley"\ OR\ "fields\ of\ mistria")\ AND\ ("first\ playthrough"\ OR\ "blind\ playthrough"\ OR\ "first\ time")},
+applied to YouTube videos with results restricted to 01/01/2016 through
+04/01/2026. This date range was selected because it involved the release
+of \emph{Stardew Valley} and \emph{Fields of Mistria} while also still
+being able to reveal gender performance through in-game mechanics.
+Future updates did not impact the overall first interactions of a
+person's gameplay.
+
+The initial search returned 152,000 items:
+
+\begin{itemize}
+\tightlist
+\item
+  ``All items meeting the inclusion criteria were retained, producing a
+  final sample of 100 items.''
+\end{itemize}
+
+Items were excluded if they were non-commentary videos, videos where the
+player did not speak for the entire video, or only spoke a few words
+before remaining silent for the rest of the video.
+
+The final sample consisted of \textbf{N = 100} items, each constituting
+one unit of analysis: One YouTube gameplay video, as defined by Google's
+Support website as ``videos that contain in-game footage to show a good
+sense of how a game is played.''
+
+\section{Analytical Approach}\label{analytical-approach}
+
+The analysis proceeded in two phases. In Study 1, a qualitative
+immersion process was used to identify emergent themes, develop
+conceptual categories, and construct operational definitions for each
+variable. This inductive process --- grounded in the memo-writing and
+immersion techniques described in the course textbook --- ensured that
+the coding scheme reflected patterns present in the data rather than
+being imposed from the outside.
+
+In Study 2, the resulting codebook was applied systematically to the
+full sample. Each item was coded on 5 variables, producing a structured
+dataset that was analyzed using descriptive statistics and an
+inferential test appropriate to the research questions (described in
+Study 2).
+
+\section{Variables and Measures}\label{variables-and-measures}
+
+\textbf{Gender} refers to ``The characteristics of women, men, girls and
+boys that are socially constructed. This include norms, behaviors and
+roles associated with being a woman, man, girl or boy, as well as
+relationships with each other.'' \emph{Gender and Health} (n.d.) For the
+purposes of this study, Gender was operationalized as viewing the
+beginning of the video, up until after the character creation, and
+selecting one of two values. Coders assigned one of two values: 1 =
+Masculine, 2 = Feminine. If a player chose something different from
+their gender identity or showed discomfort in selective gender choices,
+the decision rule is to code 0 = gender identity conflict. Items for
+which a determination could not be made were assigned code 9 and
+excluded from analysis.
+
+\textbf{Gaming Mechanics} refers to ``The specific rules, actions, and
+systems that define how players interact with a game. Determines what a
+player can do, how the game responds, and how process, challenge, and
+rewards are created.'' {admin} (2026). This variable was operationalized
+as watching the last fifteen minutes \emph{Stardew Valley} or
+\emph{Fields of Mistria} gameplay video, or the ``100th day'' of their
+video entirely, Winter 16. Then, noting how many times a day one
+category is chosen, selecting the highest total number's category at the
+end. This will be their ``dominating'' gaming mechanic., coded into 5
+categories: 1 = Land, 2 = Mining, 3 = Community, 4 = Romance, if
+applicable, 5 = Fishing. This variable had a few decision rules, such as
+a code 4 being a manual write-down of what NPC was chosen for marriage,
+upgrading farm tools is a code 1 while processing geodes is a code 2,
+and anything that had equal tallies in multiple categories were coded as
+a 9 and looked into.
+
+\textbf{Gameplay Videos} refers to ``Videos that contain in-game footage
+to show a good sense of how a game is played.'' \emph{About Gameplay
+Videos - {Google Ads Help}} (n.d.) This variable was operationalized
+Coded based on watching the last fifteen minutes of a \emph{Stardew
+Valley} or \emph{Fields of Mistria} gameplay video, or the ``100th day''
+of their video entirely, or Winter 16, then and choosing one of four
+categories: 1 = Full Video Without Help, 2 = Full Video With Help, 3 =
+Playlist Without Help, 4 = Playlist With Help. If a player pauses for a
+period of time, such as a streamer stopping to talk to their chat or a
+player pausing to take a break, skip through it until they begin to play
+again.
+
+\textbf{Gender Performance} refers to gender as not only an identity,
+but repeated, social performance using actions that, when done correctly
+or incorrectly, are praised or punished by those same actors a part of
+that performance. Butler (1988) This variable was operationalized as
+based on what gaming mechanics players lean towards based on their
+gender identity and performance of their gender and assigning one of two
+values, coded into 2 categories: 1 = Yes, they did perform by their
+gender, 2 = No, they did not perform by their gender. If the player
+seemed indifferent towards gender identity and performance and instead
+played the game neutrally or for enjoyment, code = 3.
+
+\textbf{Farm Choice} refers to the various different farm map options a
+player has at the beginning of the game. There are eight to choose from
+in the current version of \emph{Stardew Valley}, however as \emph{Fields
+of Mistria} is still in early access, there is currently only one farm
+type in the game. This variable was operationalized as at the beginning
+of the video during character customization. This is an option off to
+the side that a player can choose from, then coded into 2 categories: 1
+= Standard Farm, 2 = Other, or a different farm choice option. If the
+game was \emph{Fields of Mistria}, the code = 0. This is a game still in
+early access and, at the time of writing this, does not have options for
+alternative farm layouts.
+
+\textbf{Season} refers to the seasonal time period the player is in
+during their most recent video. This variable was operationalized as at
+the start of the data collection time, coded into 4 categories: 1 =
+Spring, 2 = Summer, 3 = Fall or Autumn. 4 = Winter. If unable to tell at
+the start or throughout the video and if a calendar was absent for icon
+symbol of season, code = 9.
+
+\section{Pilot Test and Codebook
+Refinement}\label{pilot-test-and-codebook-refinement}
+
+Prior to full data collection, the codebook was applied to a pilot
+sample of 10 items to identify ambiguities and refine decision rules.
+The pilot revealed that multiple variables needed an update or to be
+redefined. Gameplay Videos showed that not every video could be watched
+the whole way through, leading to the singular day or last fifteen
+minutes of their video. Gaming Mechanics did not originally have a
+section for fishing or how to handle shops and geode processing, so
+those were updated along with category 5 creation. Gender Performance
+also took into account verbal responses and interactions with chat
+livestream or responses to NPCs as part of the performance, so those
+were revised to include it for masculine, feminine, and indifference.
+Farm Choice did not consider how \emph{Fields of Mistria} has a standard
+farm for everyone, so code = 0 was created for that category. Finally,
+the Season variable was added and its four categories to see how far
+each player made it in their gameplays. No further substantial revisions
+were required, and the pilot items were retained in the final sample.
+
+\bookmarksetup{startatroot}
+
+\chapter{Study 1: Qualitative Content
+Analysis}\label{study-1-qualitative-content-analysis}
+
+The quantitative analysis presented in the next chapter depends on a
+coding scheme --- a set of variables with clearly defined categories.
+But those variables did not emerge from thin air. Before any systematic
+coding could begin, a period of qualitative immersion was necessary to
+understand the source material on its own terms and identify the
+patterns worth measuring. This chapter documents that process.
+
+\section{Immersion Process}\label{immersion-process}
+
+To develop the coding scheme, all 100 items from the sample were read
+closely and without a predetermined framework. The goal was to approach
+the material inductively --- to notice what was there rather than impose
+categories from the outside. During this process, observational memos
+were written to capture initial reactions, recurring patterns, and
+unexpected features of the coverage.
+
+When immersing myself in every individual video, what stood out the most
+is how gaming mechanics played into a player's in-game day-to-day, as
+well as how far along each person played the two games. Most players
+were in the winter season, specifically around my Winter 16/100th day
+marker, and they had well-developed farms and goods overall. There was
+also a notable amount of my code 9 when it came to gaming mechanics,
+mostly because the different gaming mechanics would end up as a tie
+during tallying and data collecting. A theme I noticed is that players
+were either indifferent when it came to gender performance and played a
+cozy game for the fact that it was fun and relaxing, or acted out their
+gender's verbally. This was grouped into the gender performance category
+and noted as much as possible.
+
+\section{Emergent Themes}\label{emergent-themes}
+
+Three primary themes emerged from the qualitative analysis:
+
+\subsection{Theme 1: In-Game Season}\label{theme-1-in-game-season}
+
+One of the variables that was the most curious is how far along would
+every person be in their gameplay videos. This could be a factor when it
+came to livestreams or playlist videos, encouraging content creation and
+interest, but it became a strong theme. Winter 16 was the cut-off for
+these videos as it would be a ``100th day'' for every player, and most
+in the dataset did make it to winter. If the player wasn't in Winter,
+the next dominant season was Spring with only a few videos or one single
+livestream to have the full experience.
+
+\subsection{Theme 2: Gaming Mechanics Code =
+9}\label{theme-2-gaming-mechanics-code-9}
+
+Gaming mechanics was one thing that needed to be looked into when it
+came to the overall study. While ``community'' and ``land'' were
+relatively high categories, mostly coming from the repetitive gameplay
+of farmland tools and activities as well as quest completion and
+gift-giving, there was a handful fo code = 9 areas. These were code =
+9's because they ended up tying in multiple gameplay mechanics either
+throughout a single in-game day or through a ``100 Days in/of'' YouTube
+video. These code = 9's tied mostly in community and land, which are the
+prominent mechanics for a player to do in these two gaming titles.
+
+\subsection{Theme 3: Verbal Responses}\label{theme-3-verbal-responses}
+
+This was not a variable considered in the study as gender performance
+focused on the gaming mechanics and interactions of in-game NPC's and
+not through a chat livestream or YouTube commentary video. However,
+there were noted moments of language usually noticed in online gaming
+communities throughout some of the videos. Instances such as men making
+innuendos or focusing on ``the grind'' while women interacted with the
+community the most, as well as prioritizing gift-giving to build in-game
+romances. This theme could be explored further with future studies. This
+theme tied into the gender performance variable as it did seem to bring
+some praise from others as well as making the initial player feel good
+about their act.
+
+\section{From Themes to Variables}\label{from-themes-to-variables}
+
+The themes identified above informed the construction of the coding
+variables used in Study 2. Specifically:
+
+\begin{itemize}
+\item
+  \textbf{In-Game Season} was operationalized as the variable
+  \textbf{Season}, coded as 1 = Spring, 2 = Summer, 3 = Fall, 4 =
+  Winter. The qualitative analysis revealed that season and longevity of
+  a character's game file played a significant part. While the
+  progression of each game could've been encouraged due to popularity
+  for a player's channel, they still showed enough interest to keep the
+  gameplay going. Winter ended up being noted the most with Spring
+  coming in second. If the player was in Spring, the video was most
+  likely about the first week and the player's first experiences
+  overall.
+\item
+  \textbf{Gaming Mechanics Code = 9} was operationalized as the variable
+  \textbf{Gaming Mechanics}, coded as 1 = Land, 2 = Mining, 3 =
+  Community, 4 = Romance, 5 = Fishing, and 9 = Undetermined. 9 stayed as
+  ``undetermined'' due to the fact that, at the end of data collection
+  for a video, specific gaming mechanics were equal with land and
+  community being the highest of those ties. This could've been it's own
+  code number, but due to the fact that it happened infrequently, a code
+  = 9 made the most sense. It also made sense in the overall since the
+  main gaming mechanics of both \emph{Stardew Valley} and \emph{Fields
+  of Mistria} is running a farm and interacting with the entire land of
+  on-farm and out-of-farm maps and the interactions of NPC's.
+\item
+  \textbf{Verbal Responses} was operationalized as the variable
+  \textbf{Gender Performance}, coded as 1 = did perform their gender, 2
+  = did not perform their gender, 3 = indifferent about gender
+  performance. Verbal responses were included and made note of as part
+  of gender performance. Themes of how different genders interacted with
+  in-game mechanics and NPC's as well as how they interacted with their
+  own videos and chats showed some themes of gender performance.
+\end{itemize}
+
+This inductive process --- moving from open-ended reading to structured
+observation --- ensured that the coding scheme reflected the actual
+patterns present in the data rather than being imposed from a textbook
+or prior study. The resulting variables formed the basis of the
+systematic quantitative analysis presented in the next chapter.
+
+\section{Edge Cases and Coding
+Decisions}\label{edge-cases-and-coding-decisions}
+
+Several items resisted easy classification. The variable
+\textbf{Gameplay Videos} showed the greatest problem during the pilot
+testing, then later throughout the rest of my coding data. Some players
+had their videos as multiple livestreams in a single playlist, others
+had full-length videos of ``100 Days in/of'' either gaming title. Some
+required additional assistance, such as in-game chat or the Wikipedia
+pages for both games, while others preferred the challenge and sought to
+figure things out on their own. Because of the length of time for the
+study and each video, it was noted how their videos were organized
+through one of four categories. Then, the data collection went to the
+most recent video and studying the last 15-minutes, or seeking out as
+close to Winter 16 as possible. These edge cases and the decision rules
+developed to handle them were documented in the codebook and applied
+consistently throughout the quantitative coding phase.
+
+\bookmarksetup{startatroot}
+
+\chapter{Study 2: Quantitative Content
+Analysis}\label{study-2-quantitative-content-analysis}
+
+Using the variables developed through the qualitative analysis in Study
+1, the full sample (N = 100 items) was coded systematically. This
+chapter presents the quantitative results: descriptive statistics
+characterizing the sample, followed by an inferential test addressing
+the study's research questions.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Descriptive Statistics}\label{descriptive-statistics}
+
+\subsection{Overview of the Sample}\label{overview-of-the-sample}
+
+\begingroup\fontsize{13}{15}\selectfont
+
+\begin{longtable}[t]{lcc}
+
+\toprule
+\cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{Source / Outlet}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{N}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{\% of Sample}}}\\
+\midrule
+did perform & 55 & 55\%\\
+did not perform & 6 & 6\%\\
+indifferent & 36 & 36\%\\
+undetermined & 3 & 3\%\\
+\bottomrule
+
+
+\caption{\label{tbl-sample-overview}Table 1. Sample composition by
+Gender Performance.}
+
+\tabularnewline
+\end{longtable}
+
+\endgroup{}
+
+The data came from YouTube gameplay videos, watching them the whole way
+through, then deciding whether or not the different genders showed
+gender performance. It was distributed through the span of five days
+with fairly consistent video upload times.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Distribution of Primary Variable: Gender
+Performance}\label{distribution-of-primary-variable-gender-performance}
+
+\begingroup\fontsize{13}{15}\selectfont
+
+\begin{longtable}[t]{lccc}
+
+\toprule
+\cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{Gender Performance}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{N}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{Percent}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{Cumulative \%}}}\\
+\midrule
+did perform & 55 & 55\% & 55\%\\
+indifferent & 36 & 36\% & 91\%\\
+did not perform & 6 & 6\% & 97\%\\
+undetermined & 3 & 3\% & 100\%\\
+\bottomrule
+
+
+\caption{\label{tbl-var1-freq}Table 2. Frequency distribution of Gender
+Performance (N = 100).}
+
+\tabularnewline
+\end{longtable}
+
+\endgroup{}
+
+The most common when it came to gender performance is that half of my
+dataset did perform their gender, with signs of indifference being the
+second most common. The least common is those who did not perform by
+their gender. This connects to Study 1 when it came to the verbal
+responses and how that coincided with gender performance.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Visualization: Gender
+Performance}\label{visualization-gender-performance}
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{04-study-2_files/figure-pdf/fig-var1-bar-1.pdf}}
+
+}
+
+\caption{\label{fig-var1-bar}Figure 1. Distribution of Gender
+Performance across all coded items. The key visual pattern is those who
+did perform their gender and those who either did not or showed
+indifference to gender identity}
+
+\end{figure}%
+
+The dominant category are those who did perform by their gender. The
+distribution is fairly concentrated in one category and spread out in
+the others. The most surprising is how little those did not perform by
+their gender and were indifferent overall. They were more focused on
+enjoying the game without gender constraints even though they had a
+gender identity.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Distribution of Secondary Variable: Gaming
+Mechanics}\label{distribution-of-secondary-variable-gaming-mechanics}
+
+\begingroup\fontsize{13}{15}\selectfont
+
+\begin{longtable}[t]{lcc}
+
+\toprule
+\cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{Gaming Mechanics}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{N}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{Percent}}}\\
+\midrule
+community & 40 & 40\%\\
+land & 36 & 36\%\\
+mining & 12 & 12\%\\
+undetermined & 10 & 10\%\\
+fishing & 2 & 2\%\\
+\bottomrule
+
+
+\caption{\label{tbl-var2-freq}Table 3. Frequency distribution of Gaming
+Mechanics.}
+
+\tabularnewline
+\end{longtable}
+
+\endgroup{}
+
+The top gaming mechanic is the community gaming mechanic with land
+following behind it. Fishing and romance were the lowest ones, to my
+surprise. While there were interests in romance, it did end up being a
+part of community or did not make it far enough video-wise to have an
+official romantic interest. Community and land being in the top make
+sense because both games prioritize those mechanics the most;
+interacting with NPC's and working around your farm land or interacting
+with the entire map.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Inferential Analysis}\label{inferential-analysis}
+
+\subsection{Chi-Square Test of Independence: Gender Performance × Gaming
+Mechanic}\label{chi-square-test-of-independence-gender-performance-gaming-mechanic}
+
+\begingroup\fontsize{13}{15}\selectfont
+
+\begin{longtable}[t]{lcccclc}
+
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{6}{c}{Gaming Mechanic} \\
+\cmidrule(l{3pt}r{3pt}){2-7}
+\cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{Gender Performance}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{land}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{mining}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{community}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{romance}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{fishing}}} & \cellcolor[HTML]{b71c1c}{\textcolor{white}{\textbf{undetermined}}}\\
+\midrule
+did perform & 24 & 8 & 16 & 0 & 2 & 5\\
+did not perform & 0 & 1 & 4 & 0 & 0 & 1\\
+indifferent & 12 & 2 & 18 & 0 & 0 & 4\\
+undetermined & 0 & 1 & 2 & 0 & 0 & 0\\
+\bottomrule
+
+
+\caption{\label{tbl-crosstab}Table 4. Cross-tabulation of Gender
+Performance by Gaming Mechanic.}
+
+\tabularnewline
+\end{longtable}
+
+\endgroup{}
+
+The most common cell combination were those who did perform their gender
+and interacted with the land, including decorating the farm and general
+farm activities (animal care, crops, rearranging, etc.). Surprisingly,
+the community tab was the most spread out across gender performances,
+though it was the highest with those who were indifferent to gender
+performance. These players were enjoying the game in every aspect they
+could, but overall gender performance favored the community aspect the
+most.
+
+\textbf{Chi-Square Result:}
+
+A Chi-Square test of independence was conducted to examine the
+relationship between Gender and Gaming Mechanic. The result was
+\texttt{NA}, χ²(\texttt{13.421}) = \texttt{12}, \emph{p} =
+\texttt{0.3392}. It is not statistically significant. \emph{Note: I had
+to use the \texttt{chisq.test(final\$,\ final\$gaming\_mechanics)} to
+find values.}
+
+A Chi-Square test of independence was conducted to examine the
+relationship between Gender and Gaming Mechanic. The result was
+\texttt{NA}, χ²(\texttt{10}) = \texttt{NaN}, \emph{p} = \texttt{0.NaN}.
+It is not statistically significant.
+
+The chi\_result\$expected ran this: land mining community romance
+fishing undetermined did perform 19.80 6.60 22.0 0 1.10 5.5 did not
+perform 2.16 0.72 2.4 0 0.12 0.6 indifferent 12.96 4.32 14.4 0 0.72 3.6
+undetermined 1.08 0.36 1.2 0 0.06 0.3
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Summary of Findings}\label{summary-of-findings}
+
+\begin{itemize}
+\tightlist
+\item
+  Community was the most preferred gaming mechanic, along with land
+  closely behind.
+\item
+  There was an even split between those who did perform their gender and
+  those who were indifferent.
+\item
+  There was no statistical significange between the two variables
+  overall.
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Key Findings at a Glance}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+
+\begin{itemize}
+\item
+  \textbf{RQ1} Gameplay Videos and Gender: YouTube Gameplay videos
+  frames gender as indifferent to gender performance, despite their
+  performance of gender or gender identity.
+\item
+  \textbf{RQ2} Gender Performance and Gaming Mechanic Interactions: The
+  community gaming mechanic was spread out amongst all gender
+  performance categories, making the comparison not statistically
+  significant with p = 0.3392.
+\end{itemize}
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\chapter{Discussion \& Conclusion}\label{discussion-conclusion}
+
+This study examined the cozy game genre through YouTube gameplay videos
+of a player's first experiences. Using quantitative content analysis of
+N = 100 items collected from YouTube between 04/01/2026-04/05/202, the
+study first identified emergent themes through qualitative immersion
+(Study 1), then applied the resulting coding scheme systematically and
+tested for relationships among variables (Study 2). The findings are
+discussed below in relation to each research question and the broader
+theoretical framework.
+
+\section{Addressing the Research
+Questions}\label{addressing-the-research-questions}
+
+\textbf{RQ1} asked ``How would YouTube gameplay videos frame how
+different genders play cozy games?'' The qualitative analysis in Study 1
+revealed that those who present as feminine were the highest part of the
+dataset with those who identify as masculine were slightly under, and
+the lowest being the ``other'' identifier. This included people who did
+not have a preferred gender identity and/or used they/them pronouns. The
+frequency distribution presented in Study 2 (Table 2, Figure 1)
+confirmed that there was a fair concentration of gender performance for
+those who did perform their gender and those who were indifferent to
+gender performance and identity. This suggests that while those did have
+a preferred gender identity, that doesn't mean they ``successfully''
+performed their gender. They were split between ``did perform'' and
+``indifferent,'' meaning that despite their gender identity, they
+could've also leaned more towards indifferent and playing the cozy game
+as it is.
+
+This challenges Gender Performativity Theory overall. Cozy games and
+their creation are supposed to be relaxing and something for an
+individual to enjoy without feeling like they have to act or be a
+specific way. By allowing the space to act as much as yourself as you
+can, there's no inherent need to perform your gender.
+
+\textbf{RQ2} asked ``What is the relationship between gender performance
+and how the interact with their first''100 Days in Stardew Valley or
+Fields of Mistria'' YouTube gameplay videos?'' The Chi-Square test
+reported in Study 2 did not reveal a statistically significant
+relationship between gender performance and gaming mechanics.
+
+The absence of a significant relationship suggests that gender
+performance does not vary systematically with gaming mechanics in this
+dataset. This null result is itself informative: it implies that there
+is no relationship between the performance of gender and the gaming
+mechanics involved in a cozy game. Anything that does happen is merely
+coincidental.
+
+\section{Connecting the Two Studies}\label{connecting-the-two-studies}
+
+The two-part design of this study allowed the qualitative and
+quantitative phases to complement each other. Study 1's immersion
+process ensured that the variables tested in Study 2 were grounded in
+the actual patterns of the data, rather than being imposed from a
+textbook or prior study. The qualitative findings held up during
+immersion, as well as when it came to the Chi-Square test overall.
+Individuals that were playing either \emph{Stardew Valley} or
+\emph{Fields of Mistria} were playing for the sake of pure enjoyment.
+They're meant to be inclusive and freeing, so during immersion, those
+who were indifferent acted out of enjoyment for the game and not by
+gender performance. If gender was performed, it was through verbal
+interactions, but they were a miniscule part in the overall idea.
+
+\section{Theoretical Implications}\label{theoretical-implications}
+
+Taken together, these findings complicate the predictions of Gender
+Performativity Theory. Gender Performativity Theory would predict that
+repeated actions involving a person's performance of their gender would
+continue through a game predominantly for women, and the present results
+did not align with this prediction. This means that gender performance
+is not present when it comes to the cozy game genre. Since the genre is
+intended for relaxed and simpler gameplay and story, the players as
+individuals can relax and enjoy themselves at a slower pace.
+
+\section{Limitations}\label{limitations}
+
+Several limitations of the present study should be noted. First, the
+sample size was through only YouTube gameplay videos and not through
+indiviual interactions of the players. Further studies could involve an
+additional survey or sitting through livestreams instead of their VODs.
+Second, all coding was handled by an indivudal coder. Further studies
+should employ at least two-to-three as others can have different
+perspectives on what exactly counts as gender identity, then report
+Cohen's Kappa or Krippendorff's Alpha. Third, the study period of
+04/01/2026-04/05/2026 limited how long a video could be observed for. As
+this is an assignment for a class, it did not allow the overall viewing
+of gameplay videos and had to be selected for the sake of time. Future
+studies should allow more time in order to properly analyze gender,
+Gender Performativity Theory, and the gaming mechanics.
+
+These limitations notwithstanding, the study's systematic sampling
+procedure, inductively developed codebook, and use of both qualitative
+and quantitative methods represent meaningful methodological strengths.
+
+\section{Conclusion}\label{conclusion}
+
+The central finding of this study is that there is not a connection
+between gender performance and gaming mechanics when it comes to the
+cozy game genre. This matters because the genre is intended to be a
+freeing and relaxing experience, which means that the pressures of
+performing gender would be set aside as well. Future research might
+extend this work by Future research might extend this work by studying
+for a longer time to view all YouTube videos in their entirety,
+additional outlets besides YouTube gameplay videos, and Uses and
+Gratifications Theory by Blumler and Katz (1974) instead of Gender
+Performativity Theory.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{A Note on This Project}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+
+This study was conducted as a course project in MC 451: Research Methods
+in Mass Media at Southern Illinois University Edwardsville (Spring
+2026), under the supervision of Dr.~Alex P. Leith. The data, codebook,
+and analysis files are available in the GitHub repository linked at the
+top of this page.
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\chapter{References}\label{references}
+
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-GameplayVideosGoogle}
+\emph{About gameplay videos - {Google Ads Help}}. (n.d.).
+https://support.google.com/google-ads/answer/13268252?hl=en.
+
+\bibitem[\citeproctext]{ref-adminGameMechanicsExplained2026}
+{admin}. (2026). \emph{Game {Mechanics Explained}: {Definition}, {Types}
+\& {Examples}}.
+
+\bibitem[\citeproctext]{ref-CoregamerGenrePreferences2015}
+Beyond the {``core-gamer''}: {Genre} preferences and gratifications in
+computer games. (2015). \emph{Computers in Human Behavior}, \emph{44},
+293--298. \url{https://doi.org/10.1016/j.chb.2014.11.020}
+
+\bibitem[\citeproctext]{ref-boudreauWhoseVibeIt2025}
+Boudreau, K., Consalvo, M., \& Phelps, A. (2025). \emph{Whose {Vibe} is
+it {Anyway}? {Negotiating Definitions} of {Cozy Games}}.
+\url{https://doi.org/10.24251/HICSS.2025.320}
+
+\bibitem[\citeproctext]{ref-brtisCozyMasculinity2022}
+Brtis, C. (2022). Cozy {Masculinity}. \emph{Console-Ing Passions 2022}.
+
+\bibitem[\citeproctext]{ref-butler1988}
+Butler, J. (1988). Performative acts and gender constitution: An essay
+in phenomenology and feminist theory. \emph{Theatre Journal},
+\emph{40}(4), 519. \url{https://doi.org/10.2307/3207893}
+
+\bibitem[\citeproctext]{ref-coteCasualResistanceLongitudinal2020}
+Cote, A. C. (2020). Casual {Resistance}: {A Longitudinal Case Study} of
+{Video Gaming}'s {Gendered Construction} and {Related Audience
+Perceptions}. \emph{Journal of Communication}, \emph{70}(6), 819--841.
+\url{https://doi.org/10.1093/joc/jqaa028}
+
+\bibitem[\citeproctext]{ref-fangConstructingGenderResearch2025a}
+Fang, L. (2025). Constructing gender: Research on gender performativity
+among video game players. \emph{Journal of Gender Studies}, 1--13.
+\url{https://doi.org/10.1080/09589236.2025.2474664}
+
+\bibitem[\citeproctext]{ref-GenderHealth}
+\emph{Gender and health}. (n.d.).
+https://www.who.int/health-topics/gender.
+
+\bibitem[\citeproctext]{ref-mackayPeaceValleyMedia2025}
+Mackay, O. E. L., \& Roberts, C. A. (2025). Peace in the {Valley}: {A
+Media} and {Discourse Analysis} of {Eric Barone}'s {Stardew Valley
+Through Utopian Theory}. \emph{Games and Culture}, \emph{20}(1), 3--19.
+\url{https://doi.org/10.1177/15554120231187793}
+
+\bibitem[\citeproctext]{ref-tangMensHarassmentBehavior2016}
+Tang, W. Y., \& Fox, J. (2016). Men's harassment behavior in online
+video games: {Personality} traits and game factors. \emph{Aggressive
+Behavior}, \emph{42}(6), 513--521.
+\url{https://doi.org/10.1002/ab.21646}
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

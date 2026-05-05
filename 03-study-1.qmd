@@ -1,0 +1,43 @@
+---
+title: "Study 1: Qualitative Content Analysis"
+---
+
+The quantitative analysis presented in the next chapter depends on a coding scheme — a set of variables with clearly defined categories. But those variables did not emerge from thin air. Before any systematic coding could begin, a period of qualitative immersion was necessary to understand the source material on its own terms and identify the patterns worth measuring. This chapter documents that process.
+
+## Immersion Process
+
+To develop the coding scheme, all 100 items from the sample were read closely and without a predetermined framework. The goal was to approach the material inductively — to notice what was there rather than impose categories from the outside. During this process, observational memos were written to capture initial reactions, recurring patterns, and unexpected features of the coverage.
+
+When immersing myself in every individual video, what stood out the most is how gaming mechanics played into a player's in-game day-to-day, as well as how far along each person played the two games. Most players were in the winter season, specifically around my Winter 16/100th day marker, and they had well-developed farms and goods overall. There was also a notable amount of my code 9 when it came to gaming mechanics, mostly because the different gaming mechanics would end up as a tie during tallying and data collecting. A theme I noticed is that players were either indifferent when it came to gender performance and played a cozy game for the fact that it was fun and relaxing, or acted out their gender's verbally. This was grouped into the gender performance category and noted as much as possible.
+
+## Emergent Themes
+
+Three primary themes emerged from the qualitative analysis:
+
+### Theme 1: In-Game Season
+
+One of the variables that was the most curious is how far along would every person be in their gameplay videos. This could be a factor when it came to livestreams or playlist videos, encouraging content creation and interest, but it became a strong theme. Winter 16 was the cut-off for these videos as it would be a "100th day" for every player, and most in the dataset did make it to winter. If the player wasn't in Winter, the next dominant season was Spring with only a few videos or one single livestream to have the full experience. 
+
+### Theme 2: Gaming Mechanics Code = 9
+
+Gaming mechanics was one thing that needed to be looked into when it came to the overall study. While "community" and "land" were relatively high categories, mostly coming from the repetitive gameplay of farmland tools and activities as well as quest completion and gift-giving, there was a handful fo code = 9 areas. These were code = 9's because they ended up tying in multiple gameplay mechanics either throughout a single in-game day or through a "100 Days in/of" YouTube video. These code = 9's tied mostly in community and land, which are the prominent mechanics for a player to do in these two gaming titles.  
+
+### Theme 3: Verbal Responses
+
+This was not a variable considered in the study as gender performance focused on the gaming mechanics and interactions of in-game NPC's and not through a chat livestream or YouTube commentary video. However, there were noted moments of language usually noticed in online gaming communities throughout some of the videos. Instances such as men making innuendos or focusing on "the grind" while women interacted with the community the most, as well as prioritizing gift-giving to build in-game romances. This theme could be explored further with future studies. This theme tied into the gender performance variable as it did seem to bring some praise from others as well as making the initial player feel good about their act.
+
+## From Themes to Variables
+
+The themes identified above informed the construction of the coding variables used in Study 2. Specifically:
+
+- **In-Game Season** was operationalized as the variable **Season**, coded as 1 = Spring, 2 = Summer, 3 = Fall, 4 = Winter. The qualitative analysis revealed that season and longevity of a character's game file played a significant part. While the progression of each game could've been encouraged due to popularity for a player's channel, they still showed enough interest to keep the gameplay going. Winter ended up being noted the most with Spring coming in second. If the player was in Spring, the video was most likely about the first week and the player's first experiences overall.
+
+- **Gaming Mechanics Code = 9** was operationalized as the variable **Gaming Mechanics**, coded as 1 = Land, 2 = Mining, 3 = Community, 4 = Romance, 5 = Fishing, and 9 = Undetermined. 9 stayed as "undetermined" due to the fact that, at the end of data collection for a video, specific gaming mechanics were equal with land and community being the highest of those ties. This could've been it's own code number, but due to the fact that it happened infrequently, a code = 9 made the most sense. It also made sense in the overall since the main gaming mechanics of both *Stardew Valley* and *Fields of Mistria* is running a farm and interacting with the entire land of on-farm and out-of-farm maps and the interactions of NPC's. 
+
+- **Verbal Responses** was operationalized as the variable **Gender Performance**, coded as 1 = did perform their gender, 2 = did not perform their gender, 3 = indifferent about gender performance. Verbal responses were included and made note of as part of gender performance. Themes of how different genders interacted with in-game mechanics and NPC's as well as how they interacted with their own videos and chats showed some themes of gender performance. 
+
+This inductive process — moving from open-ended reading to structured observation — ensured that the coding scheme reflected the actual patterns present in the data rather than being imposed from a textbook or prior study. The resulting variables formed the basis of the systematic quantitative analysis presented in the next chapter.
+
+## Edge Cases and Coding Decisions
+
+Several items resisted easy classification. The variable **Gameplay Videos** showed the greatest problem during the pilot testing, then later throughout the rest of my coding data. Some players had their videos as multiple livestreams in a single playlist, others had full-length videos of "100 Days in/of" either gaming title. Some required additional assistance, such as in-game chat or the Wikipedia pages for both games, while others preferred the challenge and sought to figure things out on their own. Because of the length of time for the study and each video, it was noted how their videos were organized through one of four categories. Then, the data collection went to the most recent video and studying the last 15-minutes, or seeking out as close to Winter 16 as possible. These edge cases and the decision rules developed to handle them were documented in the codebook and applied consistently throughout the quantitative coding phase.

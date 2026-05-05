@@ -1,0 +1,35 @@
+---
+title: "Abstract"
+---
+
+**Author:** Gerri Marion
+**Instructor:** Dr. Alex P. Leith
+**Institution:** Southern Illinois University Edwardsville
+**Date:** May 2026
+
+---
+
+::: {.abstract-box}
+**Abstract**
+
+*This study examines how YouTube gameplay videos covered the cozy game genre during 04/01/2026-04/05/2026. Using a two-part content analysis (N = 100), this study first employed qualitative analysis to identify emergent themes in the coverage, then tested relationships among coded variables using the Chi-Square test. Findings indicate that there was no statistical significange between gender and gaming mechanics, nor through the qualitative's results of gender performance and gaming mechanics. These results suggest that cozy games are a relaxing experience that allows a release of the pressures of gender performance, encouring the inclusive space for everyone. It suggests that because of the lack of pressures and complications of cozy games, there is not much of a reason to perform by their gender identity.*
+:::
+
+---
+
+### About This Study
+
+This project presents original content analysis research conducted in partial fulfillment of MC 451: Research Methods in Mass Media at SIUE. I looked into the cozy game genre and how gender performance is impacted through a genre marketed towards women. This study was conducted using YouTube gameplay videos of *Stardew Valley* and *Fields of Mistria*.
+
+---
+
+### How to Navigate This Report
+
+| Section | What You Will Find |
+|---|---|
+| [Literature Review](01-literature-review.qmd) | Background, theory, and research questions |
+| [Methodology](02-methodology.qmd) | Data source, sampling, codebook, and procedures |
+| [Study 1: Qualitative Analysis](03-study-1.qmd) | Emergent themes, patterns, and variable development |
+| [Study 2: Quantitative Analysis](04-study-2.qmd) | Descriptive statistics, visualization, and inferential testing |
+| [Discussion](05-discussion.qmd) | Interpretation, limitations, and conclusion |
+| [References](references.qmd) | Full bibliography |

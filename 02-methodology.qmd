@@ -1,0 +1,163 @@
+---
+title: "Methodology"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+This study employed a two-part content analysis to address the research
+questions introduced in the previous section. Study 1 used qualitative
+methods — immersion, memo writing, and thematic analysis — to identify
+emergent patterns in the source material and develop the coding
+variables used in Study 2. Study 2 applied those variables
+systematically through quantitative content analysis, producing
+descriptive statistics and inferential tests. Content analysis is
+appropriate here because it provides a replicable, transparent method
+for identifying patterns in media content at a scale not feasible
+through close reading alone [@Neuendorf2017; @Krippendorff2018].
+
+## Data Source
+
+Data was collected from YouTube gameplay videos of a player's first
+experience in *Stardew Valley* and *Fields of Mistria*. This source was
+selected because my main focus of this study is how gender and gender
+performance plays into the cozy game genre, if at all. The genre itself
+was created during and after COVID as a response to toxic masculinity in
+online gaming communities. By choosing these two games, it allowed the
+ability to see how new players interact with the cozy game genre as well
+as being able to see if some of those gender performances would reveal
+during gameplay. The YouTube gameplay videos of both *Stardew Valley*
+and *Fields of Mistria* "first times" provides access to typical gaming
+mechanics in cozy games, the possibility of gender being performed
+through them, and being recent enough to have accessible data, making it
+well suited to the systematic sampling procedure described below.
+
+## Sample and Sampling Procedure
+
+Items were identified using the search string
+`("stardew valley" OR "fields of mistria") AND ("first playthrough" OR "blind playthrough" OR "first time")`,
+applied to YouTube videos with results restricted to 01/01/2016 through
+04/01/2026. This date range was selected because it involved the release
+of *Stardew Valley* and *Fields of Mistria* while also still being able
+to reveal gender performance through in-game mechanics. Future updates
+did not impact the overall first interactions of a person's gameplay.
+
+The initial search returned 152,000 items:
+
+- "All items meeting the inclusion criteria were retained, producing a
+  final sample of 100 items."
+
+Items were excluded if they were non-commentary videos, videos where the
+player did not speak for the entire video, or only spoke a few words
+before remaining silent for the rest of the video.
+
+The final sample consisted of **N = 100** items, each constituting one
+unit of analysis: One YouTube gameplay video, as defined by Google's
+Support website as "videos that contain in-game footage to show a good
+sense of how a game is played."
+
+## Analytical Approach
+
+The analysis proceeded in two phases. In Study 1, a qualitative
+immersion process was used to identify emergent themes, develop
+conceptual categories, and construct operational definitions for each
+variable. This inductive process — grounded in the memo-writing and
+immersion techniques described in the course textbook — ensured that the
+coding scheme reflected patterns present in the data rather than being
+imposed from the outside.
+
+In Study 2, the resulting codebook was applied systematically to the
+full sample. Each item was coded on 5 variables, producing a structured
+dataset that was analyzed using descriptive statistics and an
+inferential test appropriate to the research questions (described in
+Study 2).
+
+## Variables and Measures
+
+**Gender** refers to "The characteristics of women, men, girls and boys
+that are socially constructed. This include norms, behaviors and roles
+associated with being a woman, man, girl or boy, as well as
+relationships with each other." @GenderHealth For the purposes of this
+study, Gender was operationalized as viewing the beginning of the video,
+up until after the character creation, and selecting one of two values.
+Coders assigned one of two values: 1 = Masculine, 2 = Feminine. If a
+player chose something different from their gender identity or showed
+discomfort in selective gender choices, the decision rule is to code 0 =
+gender identity conflict. Items for which a determination could not be
+made were assigned code 9 and excluded from analysis.
+
+**Gaming Mechanics** refers to "The specific rules, actions, and systems
+that define how players interact with a game. Determines what a player
+can do, how the game responds, and how process, challenge, and rewards
+are created." @adminGameMechanicsExplained2026. This variable was
+operationalized as watching the last fifteen minutes *Stardew Valley* or
+*Fields of Mistria* gameplay video, or the "100th day" of their video
+entirely, Winter 16. Then, noting how many times a day one category is
+chosen, selecting the highest total number's category at the end. This
+will be their "dominating" gaming mechanic., coded into 5 categories: 1
+= Land, 2 = Mining, 3 = Community, 4 = Romance, if applicable, 5 =
+Fishing. This variable had a few decision rules, such as a code 4 being
+a manual write-down of what NPC was chosen for marriage, upgrading farm
+tools is a code 1 while processing geodes is a code 2, and anything that
+had equal tallies in multiple categories were coded as a 9 and looked
+into.
+
+**Gameplay Videos** refers to "Videos that contain in-game footage to
+show a good sense of how a game is played." @GameplayVideosGoogle This
+variable was operationalized Coded based on watching the last fifteen
+minutes of a *Stardew Valley* or *Fields of Mistria* gameplay video, or
+the "100th day" of their video entirely, or Winter 16, then and choosing
+one of four categories: 1 = Full Video Without Help, 2 = Full Video With
+Help, 3 = Playlist Without Help, 4 = Playlist With Help. If a player
+pauses for a period of time, such as a streamer stopping to talk to
+their chat or a player pausing to take a break, skip through it until
+they begin to play again.
+
+**Gender Performance** refers to gender as not only an identity, but
+repeated, social performance using actions that, when done correctly or
+incorrectly, are praised or punished by those same actors a part of that
+performance. @butler1988 This variable was operationalized as based on
+what gaming mechanics players lean towards based on their gender
+identity and performance of their gender and assigning one of two
+values, coded into 2 categories: 1 = Yes, they did perform by their
+gender, 2 = No, they did not perform by their gender. If the player
+seemed indifferent towards gender identity and performance and instead
+played the game neutrally or for enjoyment, code = 3.
+
+**Farm Choice** refers to the various different farm map options a
+player has at the beginning of the game. There are eight to choose from
+in the current version of *Stardew Valley*, however as *Fields of
+Mistria* is still in early access, there is currently only one farm type
+in the game. This variable was operationalized as at the beginning of
+the video during character customization. This is an option off to the
+side that a player can choose from, then coded into 2 categories: 1 =
+Standard Farm, 2 = Other, or a different farm choice option. If the game
+was *Fields of Mistria*, the code = 0. This is a game still in early
+access and, at the time of writing this, does not have options for
+alternative farm layouts.
+
+**Season** refers to the seasonal time period the player is in during
+their most recent video. This variable was operationalized as at the
+start of the data collection time, coded into 4 categories: 1 = Spring,
+2 = Summer, 3 = Fall or Autumn. 4 = Winter. If unable to tell at the
+start or throughout the video and if a calendar was absent for icon
+symbol of season, code = 9.
+
+## Pilot Test and Codebook Refinement
+
+Prior to full data collection, the codebook was applied to a pilot
+sample of 10 items to identify ambiguities and refine decision rules.
+The pilot revealed that multiple variables needed an update or to be
+redefined. Gameplay Videos showed that not every video could be watched
+the whole way through, leading to the singular day or last fifteen
+minutes of their video. Gaming Mechanics did not originally have a
+section for fishing or how to handle shops and geode processing, so
+those were updated along with category 5 creation. Gender Performance
+also took into account verbal responses and interactions with chat
+livestream or responses to NPCs as part of the performance, so those
+were revised to include it for masculine, feminine, and indifference.
+Farm Choice did not consider how *Fields of Mistria* has a standard farm
+for everyone, so code = 0 was created for that category. Finally, the
+Season variable was added and its four categories to see how far each
+player made it in their gameplays. No further substantial revisions were
+required, and the pilot items were retained in the final sample.

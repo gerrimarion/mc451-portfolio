@@ -1,0 +1,67 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Study Title: A Content Analysis of Cozy Games and Gender Performance"
+  author: "Gerri Marion"
+  date: "May 2026"
+  description: "MC 451 Final Portfolio — Research Methods in Mass Media, Spring 2026"
+  repo-url: https://github.com/gerrimarion/mc451-portfolio
+  repo-actions: [issue]
+  sharing: [twitter, linkedin]
+  sidebar:
+    style: "docked"
+    background: light
+    search: true
+  chapters:
+    - index.qmd
+    - 01-literature-review.qmd
+    - 02-methodology.qmd
+    - 03-study-1.qmd
+    - 04-study-2.qmd
+    - 05-discussion.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: apa.csl
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-depth: 3
+    toc-title: "On This Page"
+    number-sections: true
+    smooth-scroll: true
+    fig-align: center
+    cap-location: bottom
+    code-fold: true
+    code-tools: true
+    code-summary: "Show R Code"
+    highlight-style: github
+    embed-resources: false
+    css: custom.css
+
+  pdf:
+    documentclass: scrreprt
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    linkcolor: "darkred"
+    geometry:
+      - margin=1in
+    mainfont: "Arial"
+    fontsize: 12pt
+    fig-align: center
+    cap-location: bottom
+    keep-tex: false
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false

@@ -1,0 +1,37 @@
+---
+title: "Discussion & Conclusion"
+---
+
+::: {.section-badge}
+Phase V · The Publisher
+:::
+
+This study examined the cozy game genre through YouTube gameplay videos of a player's first experiences. Using quantitative content analysis of N = 100 items collected from YouTube between 04/01/2026-04/05/2026, the study addressed two research questions concerning how YouTube gameplay videos frame how different genders interact with cozy games and the replationship between gender performance and gaming mechanics of cozy games. The findings are discussed below in relation to each research question and the broader theoretical framework.
+
+## Addressing the Research Questions
+
+**RQ1** asked "How would YouTube gameplay videos frame how different genders play cozy games?" The frequency distribution presented in Table 2 and Figure 1 revealed that those who identified as feminine were the most common in gender with masculine identities right behind it. The least came from "other" category, including those who showed indifference to gender identity or used they/them pronouns. The community gaming mechanic is the most common with land behind it, and the least involve romance and fishing. This suggests that even though feminine identities were slightly higher in the dataset, it's about the overall gaming mechanic preference and not necessarily gender identity. Looking at it through Butler's (1988) Gender Performativity Theory, there was some gender performance but it overall challenged the framework due to the fact that those gender identities focused more on the gaming mechanics than the performance of their gender.
+
+**RQ2** asked "What is the relationship between gender performance and how the interact with their first "100 Days in Stardew Valley or Fields of Mistria" YouTube gameplay videos?" The Chi-Square test of independence (Table 4, Figure 2) DID NOT reveal a statistically significant relationship between gender and gaming mechanic, χ²(3.6039) = 8, *p* = 0.891.  The absence of a significant relationship suggests that gender does not vary systematically by gaming mechanic in this dataset. This null result is itself informative: it implies that there is not a relationship when it comes to gender identity and gaming mechanic, and that individuals playing cozy games did so for personal enjoyment and not gender identity.
+
+## Theoretical Implications
+
+Taken together, these findings complicate the predictions of Gender Performativity Theory. Gender Performativity Theory would predict that repeated actions involving a person's performance of their gender would continue through a game predominantly for women, and the present results did not align with this prediction. This means that cozy games are continuing to do what they were originally designed for: coziness. They're meant to make a person feel relaxed and free from pressures from online gaming communities, and they seem to continue to do so throughout the overall findings. Cozy games are an inclusive space, meaning that anyone can play them and not have to act any kind of way except for themselves.
+
+## Limitations
+
+Several limitations of the present study should be noted. First, the sample size was through only YouTube gameplay videos and not through indiviual interactions of the players. Further studies could involve an additional survey or sitting through livestreams instead of their VODs. Second, all coding was handled by an indivudal coder. Further studies should employ at least two-to-three as others can have different perspectives on what exactly counts as gender identity, then report Cohen's Kappa or Krippendorff's Alpha. Third, the study period of 04/01/2026-04/05/2026 limited how long a video could be observed for. As this is an assignment for a class, it did not allow the overall viewing of gameplay videos and had to be selected for the sake of time. Future studies should allow more time in order to properly analyze gender, Gender Performativity Theory, and the gaming mechanics.
+
+These limitations notwithstanding, the study's systematic sampling procedure, pre-registered codebook, and use of inferential statistics represent meaningful methodological strengths that support the credibility of the findings.
+
+## Conclusion
+
+The central finding of this study is that there is not a connection between gender and gaming mechanics through the lens of Gender Performativity Theory. This matters because while the cozy game genre remains subjective and personal to the individual, what matters is the coziness at its core. The idea is to relieve a player from pressures of society and online gaming space, and cozy games and their inclusion allow for that to happen for everyone. Future research might extend this work by studying for a longer time to view all YouTube videos in their entirety, additional outlets besides YouTube gameplay videos, and Uses and Gratifications Theory by Blumler and Katz (1974) instead of Gender Performativity Theory.
+
+---
+
+::: {.callout-note}
+## A Note on This Project
+
+This study was conducted as a course project in MC 451: Research Methods in Mass Media at Southern Illinois University Edwardsville (Spring 2026), under the supervision of Dr. Alex P. Leith. The data, codebook, and analysis files are available in the GitHub repository linked at the top of this page.
+:::
